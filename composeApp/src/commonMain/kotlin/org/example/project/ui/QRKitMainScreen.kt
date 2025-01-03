@@ -22,9 +22,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
 import network.chaintech.sdpcomposemultiplatform.sdp
 import network.chaintech.sdpcomposemultiplatform.ssp
-
 
 @Composable
 fun QRKitMainScreen(onNavigate: (String) -> Unit) {
@@ -37,8 +37,6 @@ fun QRKitMainScreen(onNavigate: (String) -> Unit) {
                 .padding(16.sdp),
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
-
-
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -61,8 +59,9 @@ fun QRKitMainScreen(onNavigate: (String) -> Unit) {
 
                     Column(
                         modifier = Modifier
-                            .align(Alignment.BottomStart)
-                            .padding(start = 16.sdp, top = 12.sdp)
+                            .fillMaxSize()
+                            .align(Alignment.Center)
+                            .padding(16.dp)
                     ) {
                         Text(
                             text = "QR Code",
@@ -82,7 +81,7 @@ fun QRKitMainScreen(onNavigate: (String) -> Unit) {
                                 color = Color.White,
                                 fontWeight = FontWeight.Normal
                             ),
-                            fontSize = 25.ssp
+                            fontSize = 16.ssp
                         )
 
                     }
@@ -100,11 +99,11 @@ fun QRKitMainScreen(onNavigate: (String) -> Unit) {
                             onNavigate(AppScreen.QRScanner.route)
                         }
                 ) {
-
                     Column(
                         modifier = Modifier
-                            .align(Alignment.BottomStart)
-                            .padding(start = 16.sdp, top = 12.sdp)
+                            .fillMaxSize()
+                            .align(Alignment.Center)
+                            .padding(16.dp)
                     ) {
                         Text(
                             text = "QR Code",
@@ -124,7 +123,7 @@ fun QRKitMainScreen(onNavigate: (String) -> Unit) {
                                 color = Color.White,
                                 fontWeight = FontWeight.Normal
                             ),
-                            fontSize = 25.ssp
+                            fontSize = 16.ssp
                         )
 
                     }
