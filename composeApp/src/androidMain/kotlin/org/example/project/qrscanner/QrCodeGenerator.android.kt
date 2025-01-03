@@ -1,25 +1,23 @@
-package org.example.project.ui
+package org.example.project.qrscanner
 
-
-import androidx.compose.runtime.Composable
 import android.graphics.Bitmap
 import android.graphics.Color
-import com.google.zxing.BarcodeFormat
-import com.google.zxing.MultiFormatWriter
-import com.google.zxing.common.BitMatrix
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.asImageBitmap
 import androidx.compose.ui.graphics.painter.BitmapPainter
 import androidx.compose.ui.unit.dp
-
+import com.google.zxing.BarcodeFormat
+import com.google.zxing.MultiFormatWriter
+import com.google.zxing.common.BitMatrix
 
 @Composable
-actual fun QrGeneratorContainer(data: String) {
+actual fun QrCodeGenerator(modifier: Modifier, data: String) {
     if (data.isNotEmpty()) {
         val bitMatrix: BitMatrix = generateQrCode(data)
         val bitmap: Bitmap = bitmapFromMatrix(bitMatrix)
@@ -29,7 +27,7 @@ actual fun QrGeneratorContainer(data: String) {
         Image(
             painter = painter,
             contentDescription = "QR Code",
-            modifier = Modifier
+            modifier = modifier
                 .fillMaxWidth()
                 .height(300.dp)
                 .padding(16.dp)
@@ -60,5 +58,3 @@ fun bitmapFromMatrix(matrix: BitMatrix): Bitmap {
     }
     return bitmap
 }
-
-

@@ -1,6 +1,5 @@
 package org.example.project.ui
 
-import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -30,10 +29,8 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import org.example.project.qrscanner.QrGenerator
 
-
-@Composable
-expect fun QrGeneratorContainer(data: String)
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -84,7 +81,7 @@ fun QrGeneratorView(onNavigate: (String) -> Unit) {
 
                 Spacer(modifier = Modifier.height(16.dp))
 
-                QrGeneratorContainer(data = inputData.text)
+                QrGenerator(modifier = Modifier, data = inputData.text)
             }
         }
     )

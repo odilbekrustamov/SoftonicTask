@@ -1,12 +1,11 @@
-package org.example.project.ui
+package org.example.project.qrscanner
 
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.material3.Text
 import androidx.compose.ui.viewinterop.UIKitView
 import kotlinx.cinterop.BetaInteropApi
 import kotlinx.cinterop.ExperimentalForeignApi
@@ -24,9 +23,8 @@ import platform.UIKit.UIImage
 import platform.UIKit.UIImageView
 import platform.UIKit.UIViewContentMode
 
-
 @Composable
-actual fun QrGeneratorContainer(data: String) {
+actual fun QrCodeGenerator(modifier: Modifier, data: String) {
     UIKitView(
         factory = {
             val imageView = UIImageView().apply {
@@ -41,7 +39,7 @@ actual fun QrGeneratorContainer(data: String) {
                 imageView.image = null
             }
         },
-        modifier = Modifier
+        modifier = modifier
             .fillMaxWidth()
             .height(300.dp)
             .padding(16.dp)

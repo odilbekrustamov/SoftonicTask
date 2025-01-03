@@ -142,7 +142,6 @@ fun QRCodeComposable(
                 }
             )
 
-            // Pass the selected overlay shape to OverlayView
             OverlayView()
         }
     }
